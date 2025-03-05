@@ -24,5 +24,7 @@ Tải Node.js mới nhất tại: https://nodejs.org/
 Chọn phiên bản LTS (Recommended for most users) để đảm bảo ổn định.
 Cài đặt và kiểm tra lại bằng lệnh node -v và npm -v.
 4. Chạy project
-npm run dev
+Chạy câu lệnh npm run dev
 Truy cập: http://localhost:5173 để xem trang quizz!
+
+!! Lưu ý: Mỗi lần khởi động trang web sẽ phải chạy lệnh npm run dev mới có thể sử dụng được
