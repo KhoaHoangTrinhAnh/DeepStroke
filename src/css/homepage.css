@@ -1,0 +1,159 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+.logo {
+    width: 134px; 
+    height: 115px; 
+    margin-top: 25px; 
+    margin-left: 55px;
+}
+
+.hero {
+    width: 1240px; 
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.frame1 {
+    width: 1240px;  
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.title-description {
+    width: 520px;  
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    line-height: 60px;
+    font-size: 46px;
+}
+
+.description {
+    font-size: 20px; 
+    line-height: 33px; 
+    color: #9497A1;
+}
+
+.upload {
+    width: 168px; 
+    height: 54px; 
+    padding: 10px 14px 10px 14px; 
+    background-color: #185CFF;
+    color: white;
+    border-radius: 6px;
+    border: transparent;
+    transition: all 0.3s ease;
+}
+
+.upload:hover {
+    transform: scale(1.1);
+}
+
+.about-stroke {
+    width: 1240px;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.stroke {
+    width: 342px;
+    
+}
+
+.title-stroke {
+    font-size: 20px; 
+    text-align: center;
+    color: #54565a;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    position: relative;
+    width: 342px; 
+    height: 552px;
+    border-radius: 10px;
+    overflow: hidden; /* Đảm bảo desc-stroke không tràn ra ngoài */
+}
+
+.image-stroke {
+    width: 342px;
+    height: 552px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover .image-stroke {
+    transform: scale(1.05);
+}
+
+.desc-stroke {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(107, 108, 166, 0.7);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+.image-container:hover .desc-stroke {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.quote-section {
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+    padding: 40px;
+    background: #f5f7fa;
+    border-radius: 10px;
+}
+
+.quote-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.test-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #185CFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.test-button:hover {
+    transform: scale(1.1);
+    background-color: #1045c7;
+}
+
+
+
