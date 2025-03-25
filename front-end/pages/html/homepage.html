@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/homepage.css">
+    <link rel="stylesheet" href="/front-end/pages/css/homepage.css">
     <title>Document</title>
 </head>
 
 <body>
-    <img src="/public/logoDeepStroke.svg" class="logo">
+    <img src="/front-end/assets/svg/logoDeepStroke.svg" class="logo">
     <div class="hero">
         <div class="frame1">
             <div class="title-description">
@@ -17,10 +17,14 @@
                 <p class="description">Sử dụng công nghệ AI tiên tiến để phân tích ảnh selfie và thông tin sức khỏe,
                     giúp bạn đánh giá nguy cơ đột quỵ sớm, đưa ra cảnh báo và đề xuất cải thiện sức khỏe mỗi cá nhân.
                 </p>
-                <button class="upload">Upload an Image</button>
+                <label class="upload">
+                    Upload an Image
+                    <input type="file" class="file-input">
+                </label>
+                
             </div>
             <div class="slider">
-                <div class="slide"><img src="/image/image1.jpg"></div>
+                <div class="slide"><img src="/front-end/assets/image/image1.jpg"></div>
             </div>
         </div>
         <h2>Thông tin về đột quỵ</h2>
@@ -44,23 +48,23 @@
         <h2>Những triệu chứng trong giai đoạn khởi phát đột quỵ</h2>
         <div class="stroke-sign">
             <div class="sign">
-                <img src="/image/sign1.jpg" class="image-sign">
+                <img src="/front-end/assets/image/sign1.jpg" class="image-sign">
                 <p class="sign-desc">1. Đột ngột yếu, tê mặt tay chân</p>
             </div>
             <div class="sign">
-                <img src="/image/sign2.jpg" class="image-sign">
+                <img src="/front-end/assets/image/sign2.jpg" class="image-sign">
                 <p class="sign-desc">2. Nói đớ, không nói chuyện được</p>
             </div>
             <div class="sign">
-                <img src="/image/sign5.webp" class="image-sign">
+                <img src="/front-end/assets/image/sign5.webp" class="image-sign">
                 <p class="sign-desc">3. Chóng mặt, đột ngột té</p>
             </div>
             <div class="sign">
-                <img src="/image/sign4.jpg" class="image-sign">
+                <img src="/front-end/assets/image/sign4.jpg" class="image-sign">
                 <p class="sign-desc">4. Méo miệng, nhìn mờ, mất thị lực</p>
             </div>
             <div class="sign">
-                <img src="/image/sign3.jpg" class="image-sign">
+                <img src="/front-end/assets/image/sign3.jpg" class="image-sign">
                 <p class="sign-desc">5. Đau đầu dữ dội</p>
             </div>
         </div>
@@ -68,7 +72,7 @@
     <div class="quote-section hidden">
         <p class="quote-text">Đừng để đột quỵ trở thành mối lo - Kiểm tra nguy cơ của bạn ngay với công nghệ AI tiên
             tiến!</p>
-        <button class="test-button">Làm test ngay</button>
+            <button class="test-button" onclick="location.href='test.html'">Làm test ngay</button>
     </div>
     </div>
     <script>

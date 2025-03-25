@@ -43,18 +43,28 @@ body {
 }
 
 .upload {
+    display: flex;
     width: 168px; 
-    height: 54px; 
-    padding: 10px 14px 10px 14px; 
+    height: 40px; 
+    padding: 5px; 
     background-color: #185CFF;
     color: white;
     border-radius: 6px;
-    border: transparent;
+    border: none;
+    font-size: 16px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .upload:hover {
     transform: scale(1.1);
+}
+
+/* Ẩn input file mặc định */
+.file-input {
+    display: none;
 }
 
 h2 {
