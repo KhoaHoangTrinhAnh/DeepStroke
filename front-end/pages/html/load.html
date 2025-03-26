@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/front-end/pages/css/load.css">
+    <title>Load kết quả</title>
+    <script>
+        setTimeout(() => {
+            window.location.href = "result.html?score=" + Math.floor(Math.random() * 101);
+        }, 3000); // Giả lập thời gian chờ 3s
+    </script>
+</head>
+
+<body>
+    <div class="loading-screen">
+        <div class="spinner"></div>
+        <p class="loading-text">Đang phân tích kết quả...</p>
+    </div>
+
+</body>
+
+</html>
