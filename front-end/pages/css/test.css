@@ -66,6 +66,15 @@ h1 {
     color: #333;
 }
 
+input[type="text"] {
+    width: 97%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
 select, input[type="radio"] {
     margin-top: 8px;
     display: block;
