@@ -19,7 +19,7 @@
                 </p>
                 <label class="upload">
                     Upload an Image
-                    <input type="file" class="file-input">
+                    <input type="file" class="file-input" id="selfieInput">
                 </label>
                 
             </div>
@@ -70,26 +70,11 @@
         </div>
     </div>
     <div class="quote-section hidden">
-        <p class="quote-text">Đừng để đột quỵ trở thành mối lo - Kiểm tra nguy cơ của bạn ngay với công nghệ AI tiên
-            tiến!</p>
-            <button class="test-button" onclick="location.href='test.html'">Làm test ngay</button>
+        <p class="quote-text">Đừng để đột quỵ trở thành mối lo - Kiểm tra nguy cơ của bạn ngay với công nghệ AI tiên tiến!</p>
+            <button class="test-button" id="startQuizBtn">Làm test ngay</button>
     </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const quoteSection = document.querySelector(".quote-section");
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        quoteSection.classList.add("show");
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            observer.observe(quoteSection);
-        });
-    </script>
+    <script src="/front-end/pages/js/homepage.js"></script>
 
 </body>
 

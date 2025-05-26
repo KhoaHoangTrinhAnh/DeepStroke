@@ -44,18 +44,19 @@ body {
 
 .upload {
     display: flex;
-    width: 168px; 
-    height: 40px; 
-    padding: 5px; 
+    align-items: center;           /* Căn giữa theo chiều dọc */
+    justify-content: center;       /* Căn giữa theo chiều ngang */
+    width: 180px;
+    height: 44px;
     background-color: #185CFF;
     color: white;
     border-radius: 6px;
-    border: none;
     font-size: 16px;
-    justify-content: center;
-    text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
 }
 
 .upload:hover {
