@@ -39,21 +39,37 @@ body {
 }
 
 /* Thanh tiến trình */
+/* Container thanh tiến trình */
 .progress-container {
     width: 100%;
     max-width: 400px;
-    height: 20px;
+    height: 30px;
     background: #ddd;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    margin: 10px auto;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Phần tiến trình màu */
 .progress-bar {
     width: 0%;
     height: 100%;
     background: green;
-    transition: width 2s ease-in-out;
+    transition: width 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Text phần trăm */
+#progress-percent {
+    color: white;
 }
 
 /* Lời khuyên */

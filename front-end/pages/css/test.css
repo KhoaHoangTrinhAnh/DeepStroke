@@ -33,10 +33,6 @@ h1 {
     transition: transform 0.3s ease-in-out;
 }
 
-.quiz-container:hover {
-    transform: scale(1.02);
-}
-
 .quiz-title {
     color: #444;
     font-size: 20px;
