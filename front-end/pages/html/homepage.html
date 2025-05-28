@@ -17,10 +17,15 @@
                 <p class="description">Sử dụng công nghệ AI tiên tiến để phân tích ảnh selfie và thông tin sức khỏe,
                     giúp bạn đánh giá nguy cơ đột quỵ sớm, đưa ra cảnh báo và đề xuất cải thiện sức khỏe mỗi cá nhân.
                 </p>
-                <label class="upload">
+                <label class="upload"> 
                     Upload an Image
-                    <input type="file" class="file-input" id="selfieInput">
+                    <input type="file" class="file-input" id="selfieInput" accept="image/*">
                 </label>
+
+                <div class="preview-container" id="preview-container" style="display:none;">
+                    <img id="preview-image" src="" alt="Ảnh selfie đã chọn" />
+                    <button id="remove-btn" title="Xóa ảnh">✕</button>
+                </div>
                 
             </div>
             <div class="slider">

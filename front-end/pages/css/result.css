@@ -38,6 +38,23 @@ body {
     font-size: 18px;
 }
 
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.progress-text-outside {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    min-width: 60px;
+    text-align: left;
+}
+
 /* Thanh tiến trình */
 /* Container thanh tiến trình */
 .progress-container {
@@ -57,19 +74,11 @@ body {
     height: 100%;
     background: green;
     transition: width 1s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 10px;
-    box-sizing: border-box;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
 }
 
 /* Text phần trăm */
 #progress-percent {
-    color: white;
+    color: black;
 }
 
 /* Lời khuyên */

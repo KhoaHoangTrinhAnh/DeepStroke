@@ -1,18 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const rawData = JSON.parse(localStorage.getItem("rawPredictionData"));
+  const quizzData = JSON.parse(localStorage.getItem("quizData"));
+  const imageData = localStorage.getItem("selfieImage");
 
-  if (!rawData) {
+  if (!quizzData || !imageData) {
     alert("❌ Không tìm thấy dữ liệu để dự đoán.");
-    window.location.href = "index.html";
+    window.location.href = "homepage.html";
     return;
   }
+
+  // Ghép quiz data và ảnh thành một object
+  const requestBody = {
+    ...quizzData,             // trải các trường câu hỏi trắc nghiệm
+    image_base64: imageData   // thêm trường ảnh base64
+  };
 
   fetch("http://localhost:5000/api/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(rawData),
+    body: JSON.stringify(requestBody), //Bạn hãy sửa từ đây là gửi dữ liệu quizz và ảnh cho api
   })
     .then(response => {
       if (!response.ok) {
@@ -22,7 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then(data => {
       console.log("✅ Kết quả dự đoán:", data);
-      localStorage.setItem("predictionResult", JSON.stringify(data));
+      // 👉 Lưu kết quả đơn giản gồm prediction và average_probability
+      const resultToStore = {
+        prediction: data.prediction,
+        average_probability: data.average_probability
+      };
+      localStorage.setItem("predictionResult", JSON.stringify(resultToStore));
       window.location.href = "result.html";
     })
     .catch(error => {
