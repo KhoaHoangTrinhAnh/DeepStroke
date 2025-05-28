@@ -50,6 +50,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     return `rgb(${r}, ${g}, ${b})`;
     }
-
-    console.log("Dữ liệu localStorage:", localStorage.getItem('predictionResult'));
 });

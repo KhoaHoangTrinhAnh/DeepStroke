@@ -18,7 +18,7 @@
                     <legend>Thông tin cá nhân và thể chất</legend>
                     <label>Bạn là nam hay nữ</label>
                     <div class="radio-group">                        
-                        <input type="radio" id="sex-male" name="sex" value="male" checked>
+                        <input type="radio" id="sex-male" name="sex" value="male">
                         <label for="sex-male">Nam</label>
                         <input type="radio" id="sex-female" name="sex" value="female">
                         <label for="sex-female">Nữ</label>
@@ -26,7 +26,7 @@
                     <label>Bạn thuộc nhóm tuổi nào?</label>
                     <select name="age" id="age">
                         <option></option>
-                        <option selected>65 đến 69 tuổi </option>
+                        <option>65 đến 69 tuổi </option>
                         <option>60 đến 64 tuổi </option>
                         <option>70 đến 74 tuổi </option>
                         <option>55 đến 59 tuổi </option>
@@ -41,9 +41,9 @@
                         <option>80 hoặc lớn hơn </option>
                     </select>
                     <label>Chiều cao hiện tại của bạn (M)</label>
-                    <input type="text" name="height" value="1.75">
+                    <input type="text" name="height">
                     <label>Cân nặng hiện tại của bạn (Kg)</label>
-                    <input type="text" name="weight" value="65">
+                    <input type="text" name="weight">
                 </fieldset>
                 <button type="button" class="next-button" onclick="nextStep(2)">Tiếp tục</button>
             </div>
@@ -54,7 +54,7 @@
                     <select name="GeneralHealth">
                         <option>Xuất sắc</option>
                         <option>Rất tốt</option>
-                        <option selected>Tốt</option>
+                        <option>Tốt</option>
                         <option>Khá</option>
                         <option>Kém</option>
                     </select>
@@ -68,56 +68,56 @@
                     <legend>Tiền sử bệnh lý</legend>
                     <label>Bạn đã từng bị nhồi máu cơ tim chưa?</label>
                     <div class="radio-group">
-                        <input type="radio" name="heartattack" value="yes" checked>
+                        <input type="radio" name="heartattack" value="yes">
                         <label for="heartattack_yes">Có</label>
                         <input type="radio" name="heartattack" value="no">
                         <label for="heartattack_no">Không</label>
                     </div>
                     <label>Bạn đã từng bị đau thắt ngực chưa?</label>
                     <div class="radio-group">
-                        <input type="radio" name="angina" value="yes" checked>
+                        <input type="radio" name="angina" value="yes">
                         <label for="angina_yes">Có</label>
                         <input type="radio" name="angina" value="no">
                         <label for="angina_no">Không</label>
                     </div>
                     <label>Bạn có bị hen suyễn không?</label>
                     <div class="radio-group">
-                        <input type="radio" id="asthma-yes" name="asthma" value="yes" checked>
+                        <input type="radio" id="asthma-yes" name="asthma" value="yes">
                         <label for="asthma-yes">Có</label>
                         <input type="radio" name="asthma" value="no">
                         <label for="asthma">Không</label>
                     </div>
                     <label>Bạn có tiền sử ung thư da?</label>
                     <div class="radio-group">
-                        <input type="radio" name="skincancer" value="yes" checked>
+                        <input type="radio" name="skincancer" value="yes">
                         <label for="skincancer">Có</label>
                         <input type="radio" name="skincancer" value="no">
                         <label for="skincancer">Không</label>
                     </div>
                     <label>Bạn có bị phổi tắc nghẽn mạn tính (COPD)?</label>
                     <div class="radio-group">
-                        <input type="radio" name="copd" value="yes" checked>
+                        <input type="radio" name="copd" value="yes">
                         <label for="copd_yes">Có</label>
                         <input type="radio" name="copd" value="no">
                         <label for="copd_no">Không</label>
                     </div>
                     <label>Bạn có đang mắc chứng hoặc từng mắc rối loạn trầm cảm?</label>
                     <div class="radio-group">
-                        <input type="radio" name="depression" value="yes" checked>
+                        <input type="radio" name="depression" value="yes">
                         <label for="depression">Có</label>
                         <input type="radio" name="depression" value="no">
                         <label for="depression">Không</label>
                     </div>
                     <label>Bạn có mắc bệnh thận?</label>
                     <div class="radio-group">
-                        <input type="radio" name="kidney" value="yes" checked>
+                        <input type="radio" name="kidney" value="yes">
                         <label for="kidney_yes">Có</label>
                         <input type="radio" name="kidney" value="no">
                         <label for="kidney_no">Không</label>
                     </div>
                     <label>Bạn có bị viêm khớp?</label>
                     <div class="radio-group">
-                        <input type="radio" name="arthritis" value="yes" checked>
+                        <input type="radio" name="arthritis" value="yes">
                         <label for="arthritis_yes">Có</label>
                         <input type="radio" name="arthritis" value="no">
                         <label for="arthritis_no">Không</label>
@@ -125,7 +125,7 @@
                     <label>Bạn có bị tiểu đường?</label>
                     <select name="diabetes">
                         <option>Có, nhưng chỉ trong thời kỳ mang thai (nữ)</option>
-                        <option selected>Không, tiền đái tháo đường hoặc cận đái tháo đường</option>
+                        <option>Không, tiền đái tháo đường hoặc cận đái tháo đường</option>
                         <option>Không</option>
                         <option>Có</option>
                     </select>
@@ -139,35 +139,35 @@
                     <legend>Giới hạn về thể chất và tinh thần</legend>
                     <label>Bạn có bị điếc hoặc khó nghe không</label>
                     <div class="radio-group">
-                        <input type="radio" name="deaf" value="yes" checked>
+                        <input type="radio" name="deaf" value="yes">
                         <label for="deaf_yes">Có</label>
                         <input type="radio" name="deaf" value="no">
                         <label for="deaf_no">Không</label>
                     </div>
                     <label>Bạn có gặp khó khăn về thị lực?</label>
                     <div class="radio-group">
-                        <input type="radio" name="blind" value="yes" checked>
+                        <input type="radio" name="blind" value="yes">
                         <label for="blind_yes">Có</label>
                         <input type="radio" name="blind" value="no">
                         <label for="blind_no">Không</label>
                     </div>
                     <label>Bạn có khó khăn trong việc tập trung hoặc ghi nhớ?</label>
                     <div class="radio-group">
-                        <input type="radio" name="concentrate" value="yes" checked>
+                        <input type="radio" name="concentrate" value="yes">
                         <label for="concentrate_yes">Có</label>
                         <input type="radio" name="concentrate" value="no">
                         <label for="concentrate_no">Không</label>
                     </div>
                     <label>Bạn có khó khăn khi đi lại, di chuyển?</label>
                     <div class="radio-group">
-                        <input type="radio" name="walking" value="yes" checked>
+                        <input type="radio" name="walking" value="yes">
                         <label for="walking_yes">Có</label>
                         <input type="radio" name="walking" value="no">
                         <label for="walking_no">Không</label>
                     </div>
                     <label>Bạn có khó khăn khi tự mặc quần áo hoặc tắm?</label>
                     <div class="radio-group">
-                        <input type="radio" name="dressing" value="yes" checked>
+                        <input type="radio" name="dressing" value="yes">
                         <label for="dressing_yes">Có</label>
                         <input type="radio" name="dressing" value="no">
                         <label for="dressing_no">Không</label>
@@ -175,7 +175,7 @@
                     <label>Bạn có gặp khó khăn khi thực hiện các công việc hằng ngày như đi chợ, thanh toán hóa
                         đơn?</label>
                     <div class="radio-group">
-                        <input type="radio" name="errands" value="yes" checked>
+                        <input type="radio" name="errands" value="yes">
                         <label for="errands_yes">Có</label>
                         <input type="radio" name="errands" value="no">
                         <label for="errands_no">Không</label>
@@ -189,21 +189,21 @@
                     <legend>Thói quen sinh hoạt</legend>
                     <label>Bạn có hút thuốc lá không?</label>
                     <select name="smoking" id="smoking">
-                        <option selected>Hút thuốc một vài ngày</option>
+                        <option>Hút thuốc một vài ngày</option>
                         <option>Hút thuốc mỗi ngày</option>
                         <option>Từng hút thuốc (đã bỏ)</option>
                         <option>Chưa từng hút thuốc</option>
                     </select>
                     <label>Bạn có đang sử dụng thuốc lá điện tử?</label>
                     <select name="eciga" id="eciga">
-                        <option selected>Chưa bao giờ sử dụng thuốc lá điện tử trong đời </option>
+                        <option>Chưa bao giờ sử dụng thuốc lá điện tử trong đời </option>
                         <option>Hiện tại không sử dụng chút nào </option>
                         <option>Dùng một vài ngày </option>
                         <option>Dùng hàng ngày </option>
                     </select>
                     <label>Bạn có uống rượu/bia không?</label>
                     <div class="radio-group">
-                        <input type="radio" name="alcohol" value="yes" checked>
+                        <input type="radio" name="alcohol" value="yes">
                         <label for="alcohol_yes">Có</label>
                         <input type="radio" name="alcohol" value="no">
                         <label for="alcohol_no">Không</label>
@@ -217,14 +217,14 @@
                     <legend>Tiền sử tiêm chủng và kiểm tra</legend>
                     <label>Bạn đã tiêm vaccine cúm trong 12 tháng qua</label>
                     <div class="radio-group">
-                        <input type="radio" name="flu12" value="yes" checked>
+                        <input type="radio" name="flu12" value="yes">
                         <label for="flu12_yes">Có</label>
                         <input type="radio" name="flu12" value="no">
                         <label for="flu12_no">Không</label>
                     </div>
                     <label>Bạn đã từng tiêm vaccine phế cầu (phòng viêm phổi)?</label>
                     <div class="radio-group">
-                        <input type="radio" name="vax" value="yes" checked>
+                        <input type="radio" name="vax" value="yes">
                         <label for="vax_yes">Có</label>
                         <input type="radio" name="vax" value="no">
                         <label for="vax_no">Không</label>
@@ -238,13 +238,13 @@
                     </select>
                     <label>Bạn đã từng kiểm tra HIV?</label>
                     <div class="radio-group">
-                        <input type="radio" name="hiv" value="yes" checked>
+                        <input type="radio" name="hiv" value="yes">
                         <label for="hiv_yes">Có</label>
                         <input type="radio" name="hiv" value="no">
                         <label for="hiv_no">Không</label>
                     </div><label>Bạn đã từng chụp X-quang phổi hoặc CT ngực?</label>
                     <div class="radio-group">
-                        <input type="radio" name="ct" value="yes" checked>
+                        <input type="radio" name="ct" value="yes">
                         <label for="ct_yes">Có</label>
                         <input type="radio" name="ct" value="no">
                         <label for="ct_no">Không</label>
@@ -258,14 +258,14 @@
                     <legend>COVID-19 và nguy cơ cao</legend>
                     <label>Bạn đã từng nhiễm COVID-19 chưa?</label>
                     <div class="radio-group">
-                        <input type="radio" name="covid" value="yes" checked>
+                        <input type="radio" name="covid" value="yes">
                         <label for="covid_yes">Có</label>
                         <input type="radio" name="covid" value="no">
                         <label for="covid_no">Không</label>
                     </div>
                     <label>Trong 1 năm qua, bạn có được đánh giá là thuộc nhóm nguy cơ cao về sức khỏe?</label>
                     <div class="radio-group">
-                        <input type="radio" name="risk" value="yes" checked>
+                        <input type="radio" name="risk" value="yes">
                         <label for="risk_yes">Có</label>
                         <input type="radio" name="risk" value="no">
                         <label for="risk_no">Không</label>

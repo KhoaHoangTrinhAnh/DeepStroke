@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then(data => {
-      console.log("✅ Kết quả dự đoán:", data);
       // 👉 Lưu kết quả đơn giản gồm prediction và average_probability
       const resultToStore = {
         prediction: data.prediction,
