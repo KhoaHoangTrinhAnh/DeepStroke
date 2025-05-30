@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imageData = localStorage.getItem("selfieImage");
 
   if (!quizzData || !imageData) {
-    alert("❌ Không tìm thấy dữ liệu để dự đoán.");
+    alert("Không tìm thấy dữ liệu để dự đoán.");
     window.location.href = "homepage.html";
     return;
   }
@@ -19,16 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(requestBody), //Bạn hãy sửa từ đây là gửi dữ liệu quizz và ảnh cho api
+    body: JSON.stringify(requestBody),
   })
     .then(response => {
       if (!response.ok) {
-        throw new Error("❌ Lỗi khi gọi API");
+        throw new Error("Lỗi khi gọi API");
       }
       return response.json();
     })
     .then(data => {
-      // 👉 Lưu kết quả đơn giản gồm prediction và average_probability
+      // Lưu kết quả đơn giản gồm prediction và average_probability
       const resultToStore = {
         prediction: data.prediction,
         average_probability: data.average_probability
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "result.html";
     })
     .catch(error => {
-      console.error("❌ Lỗi:", error);
+      console.error("Lỗi:", error);
       alert("Đã xảy ra lỗi khi gửi dữ liệu đến API.");
     });
 });

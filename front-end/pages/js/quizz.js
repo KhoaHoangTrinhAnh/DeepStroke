@@ -43,15 +43,15 @@
       const heightMeters = rawData.height ? Number(rawData.height) : null;
       const weightKg = rawData.weight ? Number(rawData.weight) : null;
 
-      // ✅ GIỮ GIÁ TRỊ GỐC CỦA BMI
+      // GIỮ GIÁ TRỊ GỐC CỦA BMI
       const rawBmi = (heightMeters && weightKg) ? (weightKg / (heightMeters * heightMeters)) : null;
 
       const transformed = {
         Sex: sexMap[rawData.sex.toLowerCase()] ?? 0,
         GeneralHealth: generalHealthMap[rawData.GeneralHealth] ?? 0,
-        HeightInMeters: heightMeters ?? 0,             // ✅ giữ nguyên giá trị
-        WeightInKilograms: weightKg ?? 0,              // ✅ giữ nguyên giá trị
-        BMI: rawBmi ?? 0,                              // ✅ giữ nguyên giá trị
+        HeightInMeters: heightMeters ?? 0,             // giữ nguyên giá trị
+        WeightInKilograms: weightKg ?? 0,              // giữ nguyên giá trị
+        BMI: rawBmi ?? 0,                              // giữ nguyên giá trị
         HadHeartAttack: yesNoToBinary(rawData.heartattack),
         HadAngina: yesNoToBinary(rawData.angina),
         HadStroke: 0,

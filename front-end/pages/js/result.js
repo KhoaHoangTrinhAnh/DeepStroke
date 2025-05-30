@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Xác định mức độ nguy cơ dựa trên riskScore
     if (riskScore < 30) {
-        riskLevelText.innerText = "Nguy cơ thấp 🟢";
+        riskLevelText.innerText = "Nguy cơ thấp";
         adviceText.innerText = "Sức khỏe tốt, hãy tiếp tục duy trì lối sống lành mạnh!";
     } else if (riskScore < 70) {
-        riskLevelText.innerText = "Nguy cơ trung bình 🟠";
+        riskLevelText.innerText = "Nguy cơ trung bình";
         adviceText.innerText = "Hãy tập thể dục thường xuyên và kiểm tra sức khỏe định kỳ.";
     } else {
-        riskLevelText.innerText = "Nguy cơ cao 🔴";
+        riskLevelText.innerText = "Nguy cơ cao";
         adviceText.innerText = "Hãy gặp bác sĩ để kiểm tra ngay! Duy trì chế độ ăn uống lành mạnh.";
     }
 

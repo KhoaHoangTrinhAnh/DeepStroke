@@ -20,7 +20,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB, điều chỉnh the
 CORS(app)
 
 # Khởi tạo Spark session
-print("🔄 Đang khởi tạo Spark session...")
+print("Đang khởi tạo Spark session...")
 spark = SparkSession.builder \
     .appName("StrokeRiskPrediction") \
     .config("spark.executor.memory", "2g") \
@@ -31,22 +31,22 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # spark = SparkSession.builder.appName("StrokeRiskPrediction").getOrCreate()
-print("✅ Spark session đã được khởi tạo.")
+print("Spark session đã được khởi tạo.")
 
 # Đường dẫn tới model
 current_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(current_dir, "models", "Model_LogisticRegression")
 
 # Load PipelineModel thay vì LogisticRegressionModel
-print(f"🔄 Đang load model Logistic RegressionModel từ: {model_path}")
+print(f"Đang load model Logistic RegressionModel từ: {model_path}")
 model = PipelineModel.load(model_path)
-print("✅ Model Logistic RegressionModel đã được load thành công.")
+print("Model Logistic RegressionModel đã được load thành công.")
 
 # Đường dẫn model VGG16
 vgg_model_path = os.path.join(current_dir, "models", "vgg16_model.h5")
-print(f"🔄 Đang load model VGG16 từ: {vgg_model_path}")
+print(f"Đang load model VGG16 từ: {vgg_model_path}")
 vgg_model = load_model(vgg_model_path)
-print("✅ Model VGG16 đã được load thành công.")
+print("Model VGG16 đã được load thành công.")
 
 def preprocess_image(pil_image):
     try:
@@ -58,10 +58,10 @@ def preprocess_image(pil_image):
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
-    print("\n📥 Nhận yêu cầu dự đoán từ client...")
+    print("\nNhận yêu cầu dự đoán từ client...")
     data = request.json
     if not data:
-        print("❌ Không nhận được dữ liệu đầu vào.")
+        print("Không nhận được dữ liệu đầu vào.")
         return jsonify({"error": "No input data received"}), 400
     print("Dữ liệu nhận được từ client:", data)
 
@@ -77,14 +77,14 @@ def predict():
 
         # Tạo Spark DataFrame từ dữ liệu đầu vào
         df = spark.createDataFrame([[data[col] for col in input_columns]], input_columns)
-        print("✅ Dữ liệu đã được chuyển thành DataFrame.")
-        print("✅ Schema DataFrame:", df.printSchema())
-        print("✅ Các cột trong DataFrame:", df.columns)
-        print("✅ Các cột model yêu cầu:", model.stages[-1].featuresCol if hasattr(model.stages[-1], 'featuresCol') else 'Không rõ')
+        print("Dữ liệu đã được chuyển thành DataFrame.")
+        print("Schema DataFrame:", df.printSchema())
+        print("Các cột trong DataFrame:", df.columns)
+        print("Các cột model yêu cầu:", model.stages[-1].featuresCol if hasattr(model.stages[-1], 'featuresCol') else 'Không rõ')
 
         result_row = model.transform(df).take(1)[0]
         spark_prob = float(result_row.probability[1])
-        print(f"✅ Model Logistic RegressionModel dự đoán xác suất là: {spark_prob}")
+        print(f"Model Logistic RegressionModel dự đoán xác suất là: {spark_prob}")
 
         # ==== 2. Tiền xử lý ảnh và dự đoán bằng VGG16 model ====
         image_base64 = data.get("image_base64", None)
@@ -92,14 +92,13 @@ def predict():
             return jsonify({'error': 'Thiếu ảnh'}), 400
 
         try:
-            print("✅ Đã nhận ảnh base64")
+            print("Đã nhận ảnh base64")
             
-            # Nếu chuỗi có prefix như: 'data:image/jpeg;base64,...', ta loại bỏ phần đầu
             header_split = image_base64.split(",")
             if len(header_split) == 2:
                 image_base64 = header_split[1]
 
-            # Kiểm tra base64 có phải là hợp lệ
+            # Kiểm tra base64 hợp lệ
             try:
                 image_data = base64.b64decode(image_base64, validate=True)
             except binascii.Error:
@@ -108,15 +107,15 @@ def predict():
             # Đọc ảnh từ bytes
             with Image.open(io.BytesIO(image_data)) as img:
                 image = img.convert("RGB")
-            print("✅ Ảnh đã được decode và đọc thành công")
+            print("Ảnh đã được decode và đọc thành công")
 
         except Exception as e:
-            print("❌ Lỗi xử lý ảnh:", e)
+            print("Lỗi xử lý ảnh:", e)
             return jsonify({'error': f'Lỗi xử lý ảnh: {str(e)}'}), 400
         
         processed_image = preprocess_image(image)
-        vgg_prob = float(vgg_model.predict(processed_image)[0][0])  # giả sử output là sigmoid
-        print(f"✅ model VGG16 dự đoán xác suất là: {vgg_prob}")
+        vgg_prob = float(vgg_model.predict(processed_image)[0][0])
+        print(f"model VGG16 dự đoán xác suất là: {vgg_prob}")
 
         # ==== 3. Trung bình kết quả ====
         avg_prob = (spark_prob + vgg_prob) / 2
@@ -130,11 +129,11 @@ def predict():
             "vgg_probability": round(vgg_prob * 100, 2),
         }
 
-        print(f"📤 Kết quả dự đoán gửi về client: {result}")
+        print(f"Kết quả dự đoán gửi về client: {result}")
         return jsonify(result)
 
     except Exception as e:
-        print("❌ Lỗi khi dự đoán:", e)
+        print("Lỗi khi dự đoán:", e)
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
