@@ -11,17 +11,17 @@
   function transformFormData(rawData) {
       const sexMap = { male: 1, female: 0 };
       const generalHealthMap = {
-        "Rất tốt": 4,
-        "Tốt": 3,
-        "Trung bình": 2,
-        "Kém": 1,
-        "Rất kém": 0
+        "Xuất sắc": 4,
+        "Rất tốt": 3,
+        "Tốt": 2,
+        "Khá": 1,
+        "Kém": 0
       };
 
       function yesNoToBinary(value) {
         if (!value) return 0;
         const val = value.toString().toLowerCase();
-        return (val === 'yes' || val === 'có' || val === 'đúng') ? 1 : 0;
+        return (val === 'yes' || val === 'có' || val === 'đúng' || val === 'Có') ? 1 : 0;
       }
 
       const smokingMap = {
